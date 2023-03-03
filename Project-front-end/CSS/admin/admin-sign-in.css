@@ -1,0 +1,290 @@
+/*custom properties*/
+
+:root {
+    --fw-reg: 300;
+    --fw-bold: 900;
+    --clr-light: #FFFFFF;
+    --clr-dark: black;
+    --clr-accent: #FB2576;
+    --clr-accent-light: #3F0071;
+    --clr-accent-dark: #150050;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    --progress: 0;
+    }
+    
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clr-dark);
+}
+
+::-webkit-scrollbar {
+    width: 0.7em;
+    height: 0.7em;    
+}
+
+::-webkit-scrollbar-track {
+    background: hsla(0, 100%, 1%, 0.875);    
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-accent);
+}
+
+/* Header */
+header {
+    text-align: center;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0px 0px 1em rgba(255, 247, 247, 0.799);
+}
+
+.header-logo {
+    padding: 16px 32px;
+    margin-left: 2em;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+    box-shadow: 0px 8px 6px -5px #ffffff9f;
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        background-color: #000000;
+        box-shadow: 0px 0px 1em rgba(255, 247, 247, 0.799);
+    }
+
+    /*#progress-bar {
+        height: 6px;
+        width: var(--progress);
+        background-color: var(--clr-dark);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }*/
+}
+
+/* Pseudoblock */
+.pseudoblock {
+    padding-bottom: 2.5em;
+}
+
+/* Admin Hero */
+.admin-hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-hero .welcome {
+    background: linear-gradient(135deg, #FB2576, #3F0071, #150050, #000000);
+    font-size: var(--fs-h1);
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    background-size: 400%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate{
+    100%{
+        background-position: 400%;
+    }
+}
+
+.admin-hero button {
+    position: absolute;
+    text-align: center;
+    bottom: 33%;
+    height: 45px;
+    width: 25em;
+    margin: 1em 0;
+    margin-bottom: 0.2em;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.admin-hero button:hover {
+   transform: scale(.98);
+   background: var(--clr-accent);
+}
+
+/* Admin Sign In*/
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700)), url(../Images/Sign-in\ Image.jpg);
+    background-position-x: center;
+  }
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    color: var(--clr-light);
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+}
+
+.container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #FB2576, #3F0071, #000000);
+}
+  
+.content form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: var(--clr-accent-light);
+}
+
+form .button {
+    height: 45px;
+    width: 100%;
+    margin: 1em 0;
+    margin-bottom: 0.2em;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--clr-accent-light);
+}
+
+form .button input:hover {
+   transform: scale(.98);
+   background: var(--clr-accent);
+}
+
+/* Back to the Top */
+.top {
+    position: fixed;
+    width: 2em;
+    height: 2em;
+    background: var(--clr-dark);
+    bottom: 1em;
+    right: 1.5em;
+    z-index: 99;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: var(--clr-accent);
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.top:hover {
+    transform: scale(1.5);
+}
+
+@media screen and (max-width: 800px) {
+    .top {
+        width: 1.5em;
+        height: 1.5em;
+        right: 0.5em;
+
+        line-height: 40px;
+    }
+}
