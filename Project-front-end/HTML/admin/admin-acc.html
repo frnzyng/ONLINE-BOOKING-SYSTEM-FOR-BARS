@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Customer Accounts</title>
+    <link rel="stylesheet" href="../../CSS/admin/admin-acc.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/5f69afeadf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <img src="../../Images/xylo-logo-favicon - Copy.png" width="150" class="header-logo">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li><a href="javascript:void(null);" class="nav-main" onclick="toggleMenu()"><i class="fa-solid fa-circle-user fa-2x"></i></a></li>
+            </ul>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info"></div>
+                    <a href="admin-custtable.html" class="sub-menu-link">
+                        <p>Reservations</p>
+                        <span></span>
+                    </a>
+                    <a href="admin-acc.html" class="sub-menu-link">
+                        <p>Customer Accounts</p>
+                        <span></span>
+                    </a>
+                    <a href="admin-sign-in.html" class="sub-menu-link">
+                        <p>Sign Out</p>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <div id="progress-bar"></div>
+    </header>
+
+    <div class="pseudoblock"></div>
+
+    <!--Title and Queries Field-->
+    <div class="block1-container" data-aos="fade-down" data-aos-duration="2000">
+        <div class="block1-title">
+        <p>Customer Accounts</p>
+        </div>
+        <div class="queries" data-aos="zoom-in" data-aos-duration="2000">
+            <input type="text" placeholder="Enter Query">
+            <button>Execute</button>
+        </div>
+    </div>
+
+    <!--Add, Delete, View and Filter (Select)-->
+    <div class="upper-btn-box">
+        <div class="left-box">
+            <button id="add-btn"  data-aos="zoom-in" data-aos-duration="1000"><i class="fa fa-plus"></i> &nbsp; Add Account</button>
+            <button id="del-all-btn" class="button2"  data-aos="zoom-in" data-aos-duration="1500"><i class="fa fa-eraser"></i> &nbsp; Clear All Accounts</button>
+            <input type="checkbox" name="" id="del-all-box"  data-aos="zoom-in" data-aos-duration="1500">
+        </div>
+        <div class="right-box" data-aos="zoom-in" data-aos-duration="1500">
+            <button class="view"><i class="fa fa-eye"></i></button>
+            <input type="text" id="empId" placeholder="Enter Account Details">
+            <button class="search">Seach</button>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-box" data-aos="fade-up" data-aos-duration="2000">
+        <table>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Contact No.</th>
+                <th>Password</th>
+                <th>Birthdate</th>
+                <th>Valid ID</th>
+            </tr>
+            <tbody id="table-data">
+            </tbody>
+        </table>
+
+        <!-- Input Window -->
+        <div class="modal">
+            <i class="fa fa-times-circle close-icon"></i>
+            <div class="left-modal">
+                <div class="img-box">
+                    <img src="../../Images/image-placeholder.png" id="valid-id" width="150" height="150" alt="Profile Picture">
+                    <input type="file" id="upload-field">
+                    <p>Valid ID</p>
+                </div>
+            </div>
+            <div class="right-modal">
+                <form id="register-form">
+                    <div class="input-box">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="numbert">Username</label>
+                        <input type="text" class="username" id="username" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="tel">Contact No.</label>
+                        <input input type="tel" class="tel" id="tel" min="11" max="11" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="numberg">Password</label>
+                        <input type="password" class="password" id="password" min-length="8" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="date">Birthdate</label>
+                        <input type="date" class="date" id="date" required>
+                    </div>
+                    <div class="input-box">
+                        <button class="register-button" id="register-btn">Register</button>
+                        <button disabled="disabled" class="update-button" id="update-btn">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script -->
+    <script src="../../JS/admin/admin-acc.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
